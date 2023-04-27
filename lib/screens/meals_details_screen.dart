@@ -4,6 +4,7 @@ import 'package:flutter_application_8/providers/favourites_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MealsDetailScreen extends ConsumerWidget {
+  // static const routeName = '/meal-detail';
   const MealsDetailScreen({super.key, required this.selectedMeal});
 
   final MealModel selectedMeal;
@@ -11,6 +12,8 @@ class MealsDetailScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // accessing mealId
+    // final mealId = ModalRoute.of(context).settings.arguments;
     final favouriteMeals = ref.watch(favouritesProvider);
 
     final isFavourite = favouriteMeals.contains(selectedMeal);
